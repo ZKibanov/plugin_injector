@@ -2,7 +2,7 @@ import { useCallback, useRef } from 'react';
 
 /**
 * Добавляет к HTML строке - CSS ввиде строки или ссылки на внешний файл стилей (в случае, если где-то нужно размещать статику для плагина)
-* в файле HTML - обязательно требуется тэг <head>
+* в файле HTML - обязательно требуется тэг head
 * @param {string} htmlString - минифицированный html код в виде строки
 * @param {string} cssString - css в виде строки или в виде ссылки на внешний файл стилей
 */
@@ -25,7 +25,7 @@ const injectCssString = (htmlString, cssString) => {
 /**
  * Пример обработчка события, которое можно присвоить окну плагина, окружение - внутреннее для iframe, можно использовать для обработки данных из плагина
  */
-const handleMouseDown = (e) => console.log('нажали мышь внутри iframe', e)
+const handleMouseDown = (e) => console.log('обработчик mouseDown из родительского компонента', e)
 
 /** Компонент для отрисовки внутри iframe приходящих с бекенда HTML,CSS,JS.
  * @param {string} htmlString - минифицированный HTML-код в формате строки, в файле HTML - обязательно требуется тэг <head>.

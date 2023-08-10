@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Plugin from './Plugin';
 
 const theme = {
@@ -16,9 +16,9 @@ function App() {
   window.onBtnClick = 1
   async function getData() {
     const response = await fetch("http://localhost:3004/httml");
-    const htmlCode = await response.json();
-    if (htmlCode) {
-      setPluginData(htmlCode)
+    const data = await response.json();
+    if (data) {
+      setPluginData(data)
     }
   }
  
@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <button onClick={getData}>
-          Get HTML
+          Get Plugin from API
         </button>
         {pluginData && <Plugin pluginData={pluginData} iframeVariables={[{theme}, {buttonText}]}/>}
       </header>
