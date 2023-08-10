@@ -1,0 +1,8 @@
+{
+    "httml": {
+        "code": "<head></head><div class='container'><div class='someClass'><button onclick='document.onBtnClick()'>ЖМАКАЙ</button></div></div>",
+        "wrapperStyle": {"width": "300px", "height": "550px", "backgroundColor":"tomato"},
+        "style":"div {border-radius: 22px} button {border-radius: 50%} .container{border: 2px solid green; border-radius: 22px; display: flex; justify-content: center; align-items: center; height: 50px;background-color: white;} .someClass { background-color: aqua; padding: 10px;}",
+        "script": "console.log('eval is done'); document.onBtnClick = function(){console.log('buttonClicked'); console.log('Пример переменной, полученной из основного приложения',window.theme)}"
+    }
+}
