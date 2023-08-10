@@ -4,4 +4,5 @@
 --node.js 14+
 # Запуск приложения:
 --npm install  
---npm run start
+--npm run start  
+Бэкенд стартует на localhost:3004, фронт стартует на localhos:3000
