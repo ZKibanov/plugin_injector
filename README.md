@@ -3,5 +3,5 @@
 # Требования:
 --node.js 14+
 # Запуск приложения:
---npm install
+--npm install  
 --npm run start
