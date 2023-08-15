@@ -44,15 +44,16 @@ const Plugin = (props) => {
 
     const handleLoad = useCallback(() => {
         if (frameRef.current) {
-            //-callback onload функции для скрипта
             if (pluginData.script) {
-                frameRef.current.contentWindow.eval(pluginData.script);
-                if (iframeVariables){
+                //-сначала прокидываем переменные
+                if (iframeVariables) {
                     iframeVariables.forEach(variable => {
                         const varName = Object.keys(variable)[0]
                         frameRef.current.contentWindow[varName] = variable[varName]
                     });
                 }
+                //-callback onload функции для скрипта, если будет не успевать - можно добавить таймаут=0
+                frameRef.current.contentWindow.eval(pluginData.script);
             }
         }
         // можно так же передавать дополнительно какие-то обработчики для iframe и получения информации из него
